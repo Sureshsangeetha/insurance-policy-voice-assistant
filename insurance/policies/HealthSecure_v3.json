@@ -1,0 +1,26 @@
+{
+  "policy_name": "HealthSecure",
+  "version": "v3",
+  "sections": {
+    "2.1": {
+      "title": "Coverage",
+      "content": "The policy covers hospitalization expenses including room rent, doctor consultation fees, nursing charges, and pre and post hospitalization expenses as specified in the policy terms."
+    },
+    "2.4": {
+      "title": "Exclusions",
+      "content": "The policy does not cover cosmetic or aesthetic procedures, self-inflicted injuries, treatment arising from substance abuse, or non-prescribed medical treatments."
+    },
+    "4.1": {
+      "title": "Claim Process",
+      "content": "Claims must be initiated through the official claims department of the insurer. This assistant can only provide information related to the claim process."
+    },
+    "5.1": {
+      "title": "Renewal",
+      "content": "The policy can be renewed annually before the expiry date subject to the terms and conditions specified in the policy document."
+    },
+    "5.2": {
+      "title": "Policy Validity",
+      "content": "The policy is valid for a period of one year from the date of issuance unless renewed as per policy guidelines."
+    }
+  }
+}
