@@ -1,0 +1,437 @@
+2026-01-05 23:51:02,687 - __main__ - ERROR - GEMINI_API_KEY not found in environment variables!
+2026-01-05 23:51:02,737 - __main__ - INFO - Starting Insurance Policy Enquiry AI Agent (Gemini Version)...
+2026-01-05 23:51:02,752 - __main__ - INFO - API Key configured: False
+2026-01-05 23:51:03,794 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.104.34.170:5000
+2026-01-05 23:51:03,818 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-01-05 23:55:19,377 - __main__ - ERROR - GEMINI_API_KEY not found in environment variables!
+2026-01-05 23:55:19,393 - __main__ - INFO - Starting Insurance Policy Enquiry AI Agent (Gemini Version)...
+2026-01-05 23:55:19,406 - __main__ - INFO - API Key configured: False
+2026-01-05 23:55:20,374 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.51.1.57:5000
+2026-01-05 23:55:20,380 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-01-05 23:55:39,674 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2026 23:55:39] "GET / HTTP/1.1" 200 -
+2026-01-05 23:55:40,056 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2026 23:55:40] "GET /api/health HTTP/1.1" 200 -
+2026-01-05 23:55:40,123 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2026 23:55:40] "GET /api/policies HTTP/1.1" 200 -
+2026-01-05 23:56:32,026 - __main__ - INFO - Gemini API configured successfully
+2026-01-05 23:56:32,042 - __main__ - INFO - Starting Insurance Policy Enquiry AI Agent (Gemini Version)...
+2026-01-05 23:56:32,066 - __main__ - INFO - API Key configured: True
+2026-01-05 23:56:32,183 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.51.1.57:5000
+2026-01-05 23:56:32,183 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-01-05 23:56:42,903 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2026 23:56:42] "GET / HTTP/1.1" 200 -
+2026-01-05 23:56:43,112 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2026 23:56:43] "GET /api/health HTTP/1.1" 200 -
+2026-01-05 23:56:43,128 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2026 23:56:43] "GET /api/policies HTTP/1.1" 200 -
+2026-01-05 23:56:51,701 - __main__ - INFO - Processing query - Conversation: 1767637603084
+2026-01-05 23:57:50,356 - __main__ - ERROR - Error processing query: Timeout of 60.0s exceeded, last exception: 503 DNS resolution failed for generativelanguage.googleapis.com:443: UNAVAILABLE: getaddrinfo: WSA Error (No such host is known.
+ -- 11001)
+Traceback (most recent call last):
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 75, in error_remapped_callable
+    return callable_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\grpc\_channel.py", line 1166, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\grpc\_channel.py", line 996, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "DNS resolution failed for generativelanguage.googleapis.com:443: UNAVAILABLE: getaddrinfo: WSA Error (No such host is known.
+ -- 11001)"
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"DNS resolution failed for generativelanguage.googleapis.com:443: UNAVAILABLE: getaddrinfo: WSA Error (No such host is known.\r\n -- 11001)"}"
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 77, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ServiceUnavailable: 503 DNS resolution failed for generativelanguage.googleapis.com:443: UNAVAILABLE: getaddrinfo: WSA Error (No such host is known.
+ -- 11001)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\studies\design_thinking\sample2\app.py", line 228, in process_query
+    response = model.generate_content(full_prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\generativeai\generative_models.py", line 248, in generate_content
+    response = self._client.generate_content(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 566, in generate_content
+    response = rpc(
+               ^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 229, in _retry_error_helper
+    raise final_exc from source_exc
+google.api_core.exceptions.RetryError: Timeout of 60.0s exceeded, last exception: 503 DNS resolution failed for generativelanguage.googleapis.com:443: UNAVAILABLE: getaddrinfo: WSA Error (No such host is known.
+ -- 11001)
+2026-01-05 23:57:50,412 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2026 23:57:50] "[35m[1mPOST /api/query HTTP/1.1[0m" 500 -
+2026-01-06 07:33:54,675 - __main__ - INFO - Gemini API configured successfully
+2026-01-06 07:33:54,679 - __main__ - INFO - Starting Insurance Policy Enquiry AI Agent (Gemini Version)...
+2026-01-06 07:33:54,691 - __main__ - INFO - API Key configured: True
+2026-01-06 07:33:55,694 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.51.1.57:5000
+2026-01-06 07:33:55,695 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-01-06 07:34:21,057 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 07:34:21] "GET / HTTP/1.1" 200 -
+2026-01-06 07:34:21,219 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 07:34:21] "GET /api/health HTTP/1.1" 200 -
+2026-01-06 07:34:21,390 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 07:34:21] "GET /api/policies HTTP/1.1" 200 -
+2026-01-06 07:34:21,461 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 07:34:21] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-01-06 07:34:31,238 - __main__ - INFO - Processing query - Conversation: 1767665061206
+2026-01-06 07:34:32,192 - __main__ - ERROR - Error processing query: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+Traceback (most recent call last):
+  File "D:\studies\design_thinking\sample2\app.py", line 228, in process_query
+    response = model.generate_content(full_prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\generativeai\generative_models.py", line 248, in generate_content
+    response = self._client.generate_content(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 566, in generate_content
+    response = rpc(
+               ^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 77, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-01-06 07:34:32,225 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 07:34:32] "[35m[1mPOST /api/query HTTP/1.1[0m" 500 -
+2026-01-06 07:37:25,467 - __main__ - INFO - Gemini API configured successfully
+2026-01-06 07:37:25,474 - __main__ - INFO - Starting Insurance Policy Enquiry AI Agent (Gemini Version)...
+2026-01-06 07:37:25,474 - __main__ - INFO - API Key configured: True
+2026-01-06 07:37:25,521 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.51.1.57:5000
+2026-01-06 07:37:25,522 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-01-06 07:37:34,420 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 07:37:34] "GET / HTTP/1.1" 200 -
+2026-01-06 07:37:34,633 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 07:37:34] "GET /api/policies HTTP/1.1" 200 -
+2026-01-06 07:37:34,633 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 07:37:34] "GET /api/health HTTP/1.1" 200 -
+2026-01-06 07:37:43,341 - __main__ - INFO - Processing query - Conversation: 1767665254625
+2026-01-06 07:37:43,858 - __main__ - ERROR - Error processing query: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+Traceback (most recent call last):
+  File "D:\studies\design_thinking\sample2\app.py", line 228, in process_query
+    response = model.generate_content(full_prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\generativeai\generative_models.py", line 248, in generate_content
+    response = self._client.generate_content(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 566, in generate_content
+    response = rpc(
+               ^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 77, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-01-06 07:37:43,869 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 07:37:43] "[35m[1mPOST /api/query HTTP/1.1[0m" 500 -
+2026-01-06 07:42:21,773 - __main__ - INFO - Gemini API configured successfully
+2026-01-06 07:42:21,804 - __main__ - INFO - Starting Insurance Policy Enquiry AI Agent (Gemini Version)...
+2026-01-06 07:42:21,804 - __main__ - INFO - API Key configured: True
+2026-01-06 07:42:21,863 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.51.1.57:5000
+2026-01-06 07:42:21,863 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-01-06 07:42:31,884 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 07:42:31] "GET / HTTP/1.1" 200 -
+2026-01-06 07:42:31,997 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 07:42:31] "GET /api/policies HTTP/1.1" 200 -
+2026-01-06 07:42:32,018 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 07:42:32] "GET /api/health HTTP/1.1" 200 -
+2026-01-06 07:42:39,802 - __main__ - INFO - Processing query - Conversation: 1767665551993
+2026-01-06 07:42:40,274 - __main__ - ERROR - Error processing query: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+Traceback (most recent call last):
+  File "D:\studies\design_thinking\sample2\app.py", line 228, in process_query
+    response = model.generate_content(full_prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 77, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-01-06 07:42:40,303 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 07:42:40] "[35m[1mPOST /api/query HTTP/1.1[0m" 500 -
+2026-01-06 07:46:34,628 - __main__ - INFO - Gemini API configured successfully
+2026-01-06 07:46:34,631 - __main__ - INFO - Starting Insurance Policy Enquiry AI Agent (Gemini Version)...
+2026-01-06 07:46:34,631 - __main__ - INFO - API Key configured: True
+2026-01-06 07:46:34,660 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.51.1.57:5000
+2026-01-06 07:46:34,660 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-01-06 07:46:43,400 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 07:46:43] "GET / HTTP/1.1" 200 -
+2026-01-06 07:46:43,457 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 07:46:43] "GET /api/health HTTP/1.1" 200 -
+2026-01-06 07:46:43,467 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 07:46:43] "GET /api/policies HTTP/1.1" 200 -
+2026-01-06 07:46:51,810 - __main__ - INFO - Processing query - Conversation: 1767665803440
+2026-01-06 07:46:55,615 - __main__ - INFO - Query processed - Intent: COVERAGE, Confidence: 0.30
+2026-01-06 07:46:55,615 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 07:46:55] "POST /api/query HTTP/1.1" 200 -
+2026-01-06 07:55:06,242 - __main__ - INFO - Gemini API configured successfully
+2026-01-06 07:55:06,256 - __main__ - INFO - Starting Insurance Policy Enquiry AI Agent (Gemini Version)...
+2026-01-06 07:55:06,256 - __main__ - INFO - API Key configured: True
+2026-01-06 07:55:06,327 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.51.1.57:5000
+2026-01-06 07:55:06,327 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-01-06 07:55:19,844 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 07:55:19] "GET / HTTP/1.1" 200 -
+2026-01-06 07:55:19,919 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 07:55:19] "GET /api/health HTTP/1.1" 200 -
+2026-01-06 07:55:19,928 - __main__ - INFO - Loaded policy document: sample_health_insurance_policy.md
+2026-01-06 07:55:19,931 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 07:55:19] "GET /api/policies HTTP/1.1" 200 -
+2026-01-06 07:55:25,893 - __main__ - INFO - Processing query - Conversation: 1767666319884
+2026-01-06 07:55:25,894 - __main__ - INFO - Loaded policy document: sample_health_insurance_policy.md
+2026-01-06 07:55:26,901 - __main__ - ERROR - Error processing query: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 34.432406026s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 34
+}
+]
+Traceback (most recent call last):
+  File "D:\studies\design_thinking\sample2\app.py", line 228, in process_query
+    response = model.generate_content(full_prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\studies\design_thinking\sample2\venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 77, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 34.432406026s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 34
+}
+]
+2026-01-06 07:55:27,169 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 07:55:27] "[35m[1mPOST /api/query HTTP/1.1[0m" 500 -
+2026-01-06 17:30:17,216 - __main__ - INFO - Gemini API configured successfully
+2026-01-06 17:30:17,231 - __main__ - INFO - Starting Insurance Policy Enquiry AI Agent (Gemini Version)...
+2026-01-06 17:30:17,233 - __main__ - INFO - API Key configured: True
+2026-01-06 17:30:17,298 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.51.1.57:5000
+2026-01-06 17:30:17,298 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-01-06 17:31:48,101 - __main__ - INFO - Gemini API configured successfully
+2026-01-06 17:31:48,107 - __main__ - INFO - Starting Insurance Policy Enquiry AI Agent (Gemini Version)...
+2026-01-06 17:31:48,107 - __main__ - INFO - API Key configured: True
+2026-01-06 17:31:48,139 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.51.1.57:5000
+2026-01-06 17:31:48,139 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-01-06 17:32:16,814 - __main__ - INFO - Gemini API configured successfully
+2026-01-06 17:32:16,828 - __main__ - INFO - Starting Insurance Policy Enquiry AI Agent (Gemini Version)...
+2026-01-06 17:32:16,829 - __main__ - INFO - API Key configured: True
+2026-01-06 17:32:16,871 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.51.1.57:5000
+2026-01-06 17:32:16,874 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-01-06 17:32:29,077 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 17:32:29] "GET / HTTP/1.1" 200 -
+2026-01-06 17:32:29,131 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 17:32:29] "GET /api/health HTTP/1.1" 200 -
+2026-01-06 17:32:29,142 - __main__ - INFO - Loaded policy document: sample_health_insurance_policy.md
+2026-01-06 17:32:29,145 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 17:32:29] "GET /api/policies HTTP/1.1" 200 -
+2026-01-06 17:32:29,351 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 17:32:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-01-06 17:32:41,065 - __main__ - INFO - Processing query - Conversation: 1767700949121
+2026-01-06 17:32:41,065 - __main__ - INFO - Loaded policy document: sample_health_insurance_policy.md
+2026-01-06 17:32:49,204 - __main__ - INFO - Query processed - Intent: COVERAGE, Confidence: 0.75
+2026-01-06 17:32:49,204 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 17:32:49] "POST /api/query HTTP/1.1" 200 -
+2026-01-06 17:33:09,105 - __main__ - INFO - Processing query - Conversation: 1767700949121
+2026-01-06 17:33:09,107 - __main__ - INFO - Loaded policy document: sample_health_insurance_policy.md
+2026-01-06 17:33:13,059 - __main__ - INFO - Query processed - Intent: UNKNOWN, Confidence: 0.65
+2026-01-06 17:33:13,063 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 17:33:13] "POST /api/query HTTP/1.1" 200 -
+2026-01-06 17:33:32,029 - __main__ - INFO - Processing query - Conversation: 1767700949121
+2026-01-06 17:33:32,029 - __main__ - INFO - Loaded policy document: sample_health_insurance_policy.md
+2026-01-06 17:33:37,927 - __main__ - INFO - Query processed - Intent: UNKNOWN, Confidence: 0.65
+2026-01-06 17:33:37,936 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 17:33:37] "POST /api/query HTTP/1.1" 200 -
+2026-01-06 17:33:57,961 - __main__ - INFO - Processing query - Conversation: 1767700949121
+2026-01-06 17:33:57,965 - __main__ - INFO - Loaded policy document: sample_health_insurance_policy.md
+2026-01-06 17:34:02,921 - __main__ - INFO - Query processed - Intent: PREMIUM, Confidence: 0.75
+2026-01-06 17:34:02,921 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 17:34:02] "POST /api/query HTTP/1.1" 200 -
+2026-01-06 18:09:07,879 - __main__ - INFO - Processing query - Conversation: 1767700949121
+2026-01-06 18:09:07,879 - __main__ - INFO - Loaded policy document: sample_health_insurance_policy.md
+2026-01-06 18:09:14,186 - __main__ - INFO - Query processed - Intent: COVERAGE, Confidence: 0.75
+2026-01-06 18:09:14,188 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 18:09:14] "POST /api/query HTTP/1.1" 200 -
+2026-01-06 22:23:16,010 - __main__ - INFO - Gemini API configured successfully
+2026-01-06 22:23:16,022 - __main__ - INFO - Starting Insurance Policy Enquiry AI Agent (Gemini Version)...
+2026-01-06 22:23:16,023 - __main__ - INFO - API Key configured: True
+2026-01-06 22:23:17,063 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.51.1.57:5000
+2026-01-06 22:23:17,069 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-01-06 22:23:34,774 - __main__ - INFO - Gemini API configured successfully
+2026-01-06 22:23:34,785 - __main__ - INFO - Starting Insurance Policy Enquiry AI Agent (Gemini Version)...
+2026-01-06 22:23:34,785 - __main__ - INFO - API Key configured: True
+2026-01-06 22:23:35,645 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.51.1.57:5000
+2026-01-06 22:23:35,645 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-01-06 22:23:49,432 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 22:23:49] "GET / HTTP/1.1" 200 -
+2026-01-06 22:23:49,606 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 22:23:49] "GET /api/health HTTP/1.1" 200 -
+2026-01-06 22:23:49,647 - __main__ - INFO - Loaded policy document: sample_health_insurance_policy.md
+2026-01-06 22:23:49,649 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 22:23:49] "GET /api/policies HTTP/1.1" 200 -
+2026-01-06 22:23:50,042 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 22:23:50] "GET / HTTP/1.1" 200 -
+2026-01-06 22:23:50,182 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 22:23:50] "GET /api/health HTTP/1.1" 200 -
+2026-01-06 22:23:50,189 - __main__ - INFO - Loaded policy document: sample_health_insurance_policy.md
+2026-01-06 22:23:50,222 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 22:23:50] "GET /api/policies HTTP/1.1" 200 -
+2026-01-06 22:23:50,502 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 22:23:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-01-06 22:23:57,597 - __main__ - INFO - Processing query - Conversation: 1767718430156
+2026-01-06 22:23:57,598 - __main__ - INFO - Loaded policy document: sample_health_insurance_policy.md
+2026-01-06 22:24:03,608 - __main__ - INFO - Query processed - Intent: COVERAGE, Confidence: 0.75
+2026-01-06 22:24:03,609 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 22:24:03] "POST /api/query HTTP/1.1" 200 -
+2026-01-06 22:37:23,466 - __main__ - INFO - Gemini API configured successfully
+2026-01-06 22:37:23,473 - __main__ - INFO - Starting Insurance Policy Enquiry AI Agent (Gemini Version)...
+2026-01-06 22:37:23,473 - __main__ - INFO - API Key configured: True
+2026-01-06 22:37:24,357 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.51.1.57:5000
+2026-01-06 22:37:24,357 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-01-06 22:38:35,179 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 22:38:35] "GET / HTTP/1.1" 200 -
+2026-01-06 22:38:35,207 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 22:38:35] "GET /api/health HTTP/1.1" 200 -
+2026-01-06 22:38:35,220 - __main__ - INFO - Loaded policy document: sample_health_insurance_policy.md
+2026-01-06 22:38:35,222 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 22:38:35] "GET /api/policies HTTP/1.1" 200 -
+2026-01-06 22:38:45,843 - __main__ - INFO - Gemini API configured successfully
+2026-01-06 22:38:45,861 - __main__ - INFO - Starting Insurance Policy Enquiry AI Agent (Gemini Version)...
+2026-01-06 22:38:45,862 - __main__ - INFO - API Key configured: True
+2026-01-06 22:38:46,735 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.51.1.57:5000
+2026-01-06 22:38:46,735 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-01-06 22:39:03,726 - __main__ - INFO - Processing query - Conversation: 1767719315208
+2026-01-06 22:39:03,727 - __main__ - INFO - Loaded policy document: sample_health_insurance_policy.md
+2026-01-06 22:39:09,204 - __main__ - INFO - Query processed - Intent: COVERAGE, Confidence: 0.80
+2026-01-06 22:39:09,204 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 22:39:09] "POST /api/query HTTP/1.1" 200 -
+2026-01-06 22:39:21,562 - __main__ - INFO - Processing query - Conversation: 1767719315208
+2026-01-06 22:39:21,562 - __main__ - INFO - Loaded policy document: sample_health_insurance_policy.md
+2026-01-06 22:39:29,201 - __main__ - INFO - Query processed - Intent: PREMIUM, Confidence: 0.80
+2026-01-06 22:39:29,213 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 22:39:29] "POST /api/query HTTP/1.1" 200 -
+2026-01-06 22:39:57,016 - __main__ - INFO - Processing query - Conversation: 1767719315208
+2026-01-06 22:39:57,020 - __main__ - INFO - Loaded policy document: sample_health_insurance_policy.md
+2026-01-06 22:40:02,267 - __main__ - INFO - Query processed - Intent: COVERAGE, Confidence: 0.80
+2026-01-06 22:40:02,267 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2026 22:40:02] "POST /api/query HTTP/1.1" 200 -
